@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -12,6 +13,8 @@ const links = [
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -26,18 +29,20 @@ export default function Nav() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const overHero = isHome && !scrolled && !open;
+  const textColor = overHero ? "text-parchment" : "text-ink";
+  const barClass = overHero
+    ? "bg-transparent border-transparent"
+    : "bg-parchment/95 backdrop-blur-md border-champagne/60";
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
-        scrolled
-          ? "border-champagne/60 bg-parchment/95 backdrop-blur-md"
-          : "border-champagne/40 bg-parchment/80 backdrop-blur-sm"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${barClass}`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-serif text-lg tracking-wide text-ink"
+          className={`font-serif text-lg tracking-wide transition-colors duration-500 ${textColor}`}
           onClick={() => setOpen(false)}
         >
           Kanika Gupta&nbsp;<span className="italic text-gold">Shori</span>
@@ -49,7 +54,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="link-underline font-sans text-xs uppercase tracking-[0.18em] text-ink transition-colors hover:text-gold"
+                  className={`link-underline font-sans text-xs uppercase tracking-[0.18em] transition-colors duration-500 hover:text-gold ${textColor}`}
                 >
                   {l.label}
                 </Link>
@@ -58,7 +63,9 @@ export default function Nav() {
           </ul>
           <Link
             href="/#connect"
-            className="rounded-full border border-ink px-6 py-2.5 font-sans text-xs uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-parchment"
+            className={`rounded-full border px-6 py-2.5 font-sans text-xs uppercase tracking-[0.18em] transition-all duration-300 hover:border-gold hover:bg-gold hover:text-parchment ${
+              overHero ? "border-parchment/70 text-parchment" : "border-ink text-ink"
+            }`}
           >
             Connect
           </Link>
@@ -71,19 +78,19 @@ export default function Nav() {
           className="relative z-50 flex h-9 w-9 flex-col items-center justify-center gap-[5px] md:hidden"
         >
           <span
-            className={`h-px w-6 bg-ink transition-transform duration-300 ${
-              open ? "translate-y-[6px] rotate-45" : ""
-            }`}
+            className={`h-px w-6 transition-all duration-300 ${
+              overHero ? "bg-parchment" : "bg-ink"
+            } ${open ? "translate-y-[6px] rotate-45 bg-ink" : ""}`}
           />
           <span
-            className={`h-px w-6 bg-ink transition-opacity duration-300 ${
-              open ? "opacity-0" : "opacity-100"
-            }`}
+            className={`h-px w-6 transition-all duration-300 ${
+              overHero ? "bg-parchment" : "bg-ink"
+            } ${open ? "opacity-0" : "opacity-100"}`}
           />
           <span
-            className={`h-px w-6 bg-ink transition-transform duration-300 ${
-              open ? "-translate-y-[6px] -rotate-45" : ""
-            }`}
+            className={`h-px w-6 transition-all duration-300 ${
+              overHero ? "bg-parchment" : "bg-ink"
+            } ${open ? "-translate-y-[6px] -rotate-45 bg-ink" : ""}`}
           />
         </button>
       </nav>
