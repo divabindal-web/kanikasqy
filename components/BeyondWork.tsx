@@ -30,32 +30,38 @@ const Heart = () => (
   </svg>
 );
 
-const pursuits = [
-  {
-    icon: Globe,
-    k: "Explorer",
-    v: "Six continents and 40+ countries — an avid traveller with a sucker’s weakness for adventure.",
-  },
-  {
-    icon: Waves,
-    k: "Diver",
-    v: "PADI-certified — cage-dived with sharks in the Pacific, explored Java Sea shipwrecks, and seen the corals of the Great Barrier Reef and Red Sea.",
-  },
-  {
-    icon: Music,
-    k: "Dancer",
-    v: "Trained across Kathak, Salsa, Tango and Zumba.",
-  },
-  {
-    icon: Heart,
-    k: "Mother & mentor",
-    v: "A mother of two and an early angel investor, championing women empowerment and child welfare.",
-  },
-];
+function Card({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: reduce ? 0 : 26 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      className={`group relative overflow-hidden rounded-[4px] border border-champagne/60 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_22px_50px_-28px_rgba(176,141,87,0.55)] ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function IconBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-parchment">
+      {children}
+    </span>
+  );
+}
 
 export default function BeyondWork() {
-  const reduce = useReducedMotion();
-
   return (
     <section className="bg-cream/40 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -77,32 +83,76 @@ export default function BeyondWork() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {pursuits.map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <motion.div
-                key={p.k}
-                initial={{ opacity: 0, y: reduce ? 0 : 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
-                className="group rounded-[3px] border border-champagne/60 bg-parchment p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_18px_40px_-24px_rgba(176,141,87,0.5)]"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-parchment">
-                    <Icon />
-                  </span>
-                  <span className="font-sans text-xs uppercase tracking-label text-gold">
-                    {p.k}
-                  </span>
-                </div>
-                <p className="mt-6 font-serif text-xl leading-relaxed text-ink">
-                  {p.v}
+        {/* Bento grid */}
+        <div className="mt-14 grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-3">
+          {/* Feature stat card */}
+          <Card className="bg-ink text-parchment md:row-span-2" delay={0}>
+            <div className="flex h-full flex-col justify-between">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/50 text-champagne">
+                <Globe />
+              </span>
+              <div className="mt-10">
+                <p className="font-sans text-xs uppercase tracking-label text-champagne">
+                  Explorer
                 </p>
-              </motion.div>
-            );
-          })}
+                <p className="mt-4 font-serif text-6xl leading-none text-parchment">
+                  40<span className="text-champagne">+</span>
+                </p>
+                <p className="mt-2 font-serif text-xl text-parchment/90">
+                  countries · six continents
+                </p>
+                <p className="mt-5 font-sans text-sm leading-relaxed text-parchment/70">
+                  An avid traveller with a sucker&rsquo;s weakness for adventure.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Diver - wide */}
+          <Card className="bg-parchment md:col-span-2" delay={0.08}>
+            <div className="flex items-start gap-5">
+              <IconBadge>
+                <Waves />
+              </IconBadge>
+              <div>
+                <p className="font-sans text-xs uppercase tracking-label text-gold">
+                  Diver
+                </p>
+                <p className="mt-3 font-serif text-xl leading-relaxed text-ink">
+                  PADI-certified &mdash; cage-dived with sharks in the Pacific,
+                  explored Java Sea shipwrecks, and seen the corals of the Great
+                  Barrier Reef and Red Sea.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Dancer */}
+          <Card className="bg-parchment" delay={0.16}>
+            <IconBadge>
+              <Music />
+            </IconBadge>
+            <p className="mt-5 font-sans text-xs uppercase tracking-label text-gold">
+              Dancer
+            </p>
+            <p className="mt-3 font-serif text-xl leading-relaxed text-ink">
+              Trained across Kathak, Salsa, Tango and Zumba.
+            </p>
+          </Card>
+
+          {/* Mother & mentor */}
+          <Card className="bg-parchment" delay={0.24}>
+            <IconBadge>
+              <Heart />
+            </IconBadge>
+            <p className="mt-5 font-sans text-xs uppercase tracking-label text-gold">
+              Mother &amp; mentor
+            </p>
+            <p className="mt-3 font-serif text-xl leading-relaxed text-ink">
+              A mother of two and early angel investor, championing women
+              empowerment and child welfare.
+            </p>
+          </Card>
         </div>
       </div>
     </section>
