@@ -63,7 +63,7 @@ function IconBadge({ children }: { children: React.ReactNode }) {
 
 export default function BeyondWork() {
   return (
-    <section className="bg-cream/40 py-24 md:py-32">
+    <section className="bg-cream/40 py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <SectionLabel index="03">Beyond Work</SectionLabel>
