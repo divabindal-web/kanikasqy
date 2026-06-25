@@ -4,13 +4,13 @@ import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
 export default function Awards() {
-  const featured = awards.slice(0, 6);
+  const featured = awards.slice(0, 3);
 
   return (
     <section id="awards" className="scroll-mt-24 py-24 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="02">Recognition</SectionLabel>
+          <SectionLabel index="01">Recognition</SectionLabel>
         </Reveal>
 
         <Reveal>
