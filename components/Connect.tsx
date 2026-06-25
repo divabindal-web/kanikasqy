@@ -14,7 +14,7 @@ const channels = [
 
 export default function Connect() {
   return (
-    <section id="connect" className="scroll-mt-24 py-24 md:py-36">
+    <section id="connect" className="scroll-mt-24 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <SectionLabel index="04">Connect</SectionLabel>
