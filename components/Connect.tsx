@@ -1,122 +1,76 @@
-"use client";
-
-import { useState } from "react";
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
-// Where the contact form delivers. Replace with the preferred inbox,
-// or swap the mailto handler for a Formspree/endpoint POST if a backend is added.
+// Change this to the preferred inbox.
 const CONTACT_EMAIL = "info@kanikaguptashori.com";
 
-const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/kanikaguptashori/" },
-  { label: "Instagram", href: "https://www.instagram.com/kanika_gupta_shori/" },
-  { label: "Facebook", href: "https://www.facebook.com/kanika.shori" },
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/channel/UCtvscMBw983oIwtcdw62NYg",
-  },
+const channels = [
+  { label: "Email", value: "Write a note", href: `mailto:${CONTACT_EMAIL}` },
+  { label: "LinkedIn", value: "in/kanikaguptashori", href: "https://www.linkedin.com/in/kanikaguptashori/" },
+  { label: "Instagram", value: "@kanika_gupta_shori", href: "https://www.instagram.com/kanika_gupta_shori/" },
+  { label: "Facebook", value: "kanika.shori", href: "https://www.facebook.com/kanika.shori" },
+  { label: "YouTube", value: "Channel", href: "https://www.youtube.com/channel/UCtvscMBw983oIwtcdw62NYg" },
 ];
 
 export default function Connect() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const send = () => {
-    const subject = encodeURIComponent(`Message from ${name || "your website"}`);
-    const body = encodeURIComponent(
-      `${message}\n\n— ${name}${email ? ` (${email})` : ""}`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  };
-
   return (
-    <section id="connect" className="scroll-mt-24 py-24 md:py-32">
+    <section id="connect" className="scroll-mt-24 py-24 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-2">
-          <Reveal>
-            <SectionLabel index="06">Connect</SectionLabel>
-            <h2 className="mt-8 font-serif text-4xl leading-tight text-ink sm:text-5xl">
-              Let&rsquo;s start a conversation.
-            </h2>
-            <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-ink-soft">
-              For speaking, press, mentorship or collaboration &mdash; share a
-              note and it will reach the right inbox.
-            </p>
+        <Reveal>
+          <SectionLabel index="04">Connect</SectionLabel>
+        </Reveal>
 
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline font-sans text-sm text-ink"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="space-y-6">
-              <Field label="Name">
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full border-b border-champagne bg-transparent py-3 font-sans text-ink outline-none transition-colors focus:border-gold"
-                  placeholder="Your name"
-                />
-              </Field>
-              <Field label="Email">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border-b border-champagne bg-transparent py-3 font-sans text-ink outline-none transition-colors focus:border-gold"
-                  placeholder="you@example.com"
-                />
-              </Field>
-              <Field label="Message">
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  rows={4}
-                  className="w-full resize-none border-b border-champagne bg-transparent py-3 font-sans text-ink outline-none transition-colors focus:border-gold"
-                  placeholder="How can we help?"
-                />
-              </Field>
-              <button
-                onClick={send}
-                disabled={!name || !message}
-                className="rounded-full border border-gold px-8 py-3 font-sans text-sm tracking-wide text-ink transition-all duration-300 hover:bg-gold hover:text-parchment disabled:cursor-not-allowed disabled:opacity-40"
+        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[1fr_1fr] md:gap-20">
+          <div>
+            <Reveal>
+              <h2 className="font-serif text-4xl leading-[1.1] text-ink sm:text-5xl md:text-6xl">
+                Let&rsquo;s talk.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="mt-8 max-w-sm font-sans text-lg leading-relaxed text-ink-soft">
+                For speaking, press, partnerships, or a note from a fellow
+                founder. The door is open.
+              </p>
+            </Reveal>
+            <Reveal delay={0.16}>
+              
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="mt-10 inline-flex items-center gap-3 rounded-full bg-ink px-9 py-4 font-sans text-sm tracking-wide text-parchment transition-all duration-300 hover:bg-gold"
               >
-                Send message
-              </button>
-            </div>
+                Write to me
+                <span aria-hidden>&rarr;</span>
+              </a>
+            </Reveal>
+          </div>
+
+          {/* Contact index */}
+          <Reveal delay={0.1}>
+            <ul className="border-t border-champagne/50">
+              {channels.map((c) => (
+                <li key={c.label}>
+                  
+                    href={c.href}
+                    target={c.href.startsWith("http") ? "_blank" : undefined}
+                    rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group flex items-baseline justify-between border-b border-champagne/50 py-5 transition-colors duration-300 hover:bg-cream/50"
+                  >
+                    <span className="font-sans text-xs uppercase tracking-label text-gold">
+                      {c.label}
+                    </span>
+                    <span className="flex items-center gap-3 font-serif text-lg text-ink">
+                      {c.value}
+                      <span className="text-gold transition-transform duration-300 group-hover:translate-x-1">
+                        &rarr;
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </Reveal>
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="font-sans text-xs uppercase tracking-label text-ink-soft">
-        {label}
-      </span>
-      <div className="mt-1">{children}</div>
-    </label>
   );
 }
