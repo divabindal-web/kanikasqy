@@ -4,13 +4,13 @@ import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
 export default function News() {
-  const featured = news.slice(0, 5);
+  const featured = news.slice(0, 3);
 
   return (
     <section id="news" className="scroll-mt-24 bg-cream/40 py-24 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="03">In the News</SectionLabel>
+          <SectionLabel index="02">In the News</SectionLabel>
         </Reveal>
 
         <Reveal>
