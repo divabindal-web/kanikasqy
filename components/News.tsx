@@ -7,7 +7,7 @@ export default function News() {
   const featured = news.slice(0, 3);
 
   return (
-    <section id="news" className="scroll-mt-24 bg-cream/40 py-24 md:py-28">
+    <section id="news" className="scroll-mt-24 bg-cream/40 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <SectionLabel index="02">In the News</SectionLabel>
@@ -19,7 +19,7 @@ export default function News() {
           </h2>
         </Reveal>
 
-        <ul className="mt-12 divide-y divide-champagne/50 border-y border-champagne/50">
+        <ul className="mt-10 divide-y divide-champagne/50 border-y border-champagne/50">
           {featured.map((n, i) => (
             <Reveal as="li" key={n.slug} delay={i * 0.05}>
               <Link
