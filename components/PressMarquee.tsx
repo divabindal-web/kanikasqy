@@ -6,7 +6,7 @@ export default function PressMarquee() {
   const items = [...press, ...press];
 
   return (
-    <section className="py-20">
+    <section className="py-10">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-10 text-center font-sans text-xs uppercase tracking-label text-ink-soft">
           As featured in
