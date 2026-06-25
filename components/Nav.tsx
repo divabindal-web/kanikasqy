@@ -5,11 +5,10 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/news", label: "News" },
   { href: "/awards", label: "Awards" },
   { href: "/article", label: "Articles" },
-  { href: "/#connect", label: "Connect" },
 ];
 
 export default function Nav() {
@@ -29,33 +28,41 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
         scrolled
-          ? "bg-parchment/85 backdrop-blur-md border-b border-champagne/40"
-          : "bg-transparent"
+          ? "border-champagne/60 bg-parchment/95 backdrop-blur-md"
+          : "border-champagne/40 bg-parchment/80 backdrop-blur-sm"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
           className="font-serif text-lg tracking-wide text-ink"
           onClick={() => setOpen(false)}
         >
-          Kanika Gupta&nbsp;Shori
+          Kanika Gupta&nbsp;<span className="italic text-gold">Shori</span>
         </Link>
 
-        <ul className="hidden items-center gap-9 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="link-underline font-sans text-sm text-ink-soft hover:text-ink"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-10 md:flex">
+          <ul className="flex items-center gap-9">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="link-underline font-sans text-xs uppercase tracking-[0.18em] text-ink transition-colors hover:text-gold"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/#connect"
+            className="rounded-full border border-ink px-6 py-2.5 font-sans text-xs uppercase tracking-[0.18em] text-ink transition-all duration-300 hover:border-gold hover:bg-gold hover:text-parchment"
+          >
+            Connect
+          </Link>
+        </div>
 
         <button
           aria-label={open ? "Close menu" : "Open menu"}
@@ -91,7 +98,7 @@ export default function Nav() {
             className="fixed inset-0 z-40 bg-parchment md:hidden"
           >
             <ul className="flex h-full flex-col items-center justify-center gap-8">
-              {links.map((l, i) => (
+              {[...links, { href: "/#connect", label: "Connect" }].map((l, i) => (
                 <motion.li
                   key={l.href}
                   initial={{ opacity: 0, y: 16 }}
