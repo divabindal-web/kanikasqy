@@ -27,11 +27,11 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[68%_center] [filter:saturate(1.12)_contrast(1.04)]"
+        className="object-cover object-[68%_center] [filter:saturate(0.62)_brightness(0.82)_contrast(1.06)]"
       />
       {/* Scrims for legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/82 via-ink/48 to-ink/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-ink/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/58 to-ink/28" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/72" />
 
       {/* Content */}
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-28">
