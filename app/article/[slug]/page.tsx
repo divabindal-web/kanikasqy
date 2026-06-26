@@ -13,8 +13,8 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const entry = getEntry("article", params.slug);
-  if (!entry) return { title: "Article — Kanika Gupta Shori" };
-  return { title: `${entry.title} — Kanika Gupta Shori`, description: entry.excerpt };
+  if (!entry) return { title: "Article | Kanika Gupta Shori" };
+  return { title: `${entry.title} | Kanika Gupta Shori`, description: entry.excerpt };
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {

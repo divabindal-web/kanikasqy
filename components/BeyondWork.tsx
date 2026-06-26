@@ -72,7 +72,7 @@ export default function BeyondWork() {
         <div className="mt-10 max-w-3xl">
           <Reveal>
             <h2 className="font-serif text-3xl leading-snug text-ink sm:text-4xl md:text-[2.75rem] md:leading-[1.12]">
-              A life lived widely &mdash; from boardrooms to ocean floors.
+              A life lived widely, from boardrooms to ocean floors.
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
@@ -83,8 +83,13 @@ export default function BeyondWork() {
           </Reveal>
         </div>
 
+        {/* Bento grid */}
         <div className="mt-14 grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-3">
-          <Card className="bg-ink text-parchment md:row-span-2" delay={0}>
+          {/* Feature stat card */}
+          <Card
+            className="bg-ink text-parchment md:row-span-2"
+            delay={0}
+          >
             <div className="flex h-full flex-col justify-between">
               <span className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/50 text-champagne">
                 <Globe />
@@ -106,6 +111,7 @@ export default function BeyondWork() {
             </div>
           </Card>
 
+          {/* Diver - wide */}
           <Card className="bg-parchment md:col-span-2" delay={0.08}>
             <div className="flex items-start gap-5">
               <IconBadge>
@@ -116,7 +122,7 @@ export default function BeyondWork() {
                   Diver
                 </p>
                 <p className="mt-3 font-serif text-xl leading-relaxed text-ink">
-                  PADI-certified &mdash; cage-dived with sharks in the Pacific,
+                  PADI-certified, cage-dived with sharks in the Pacific,
                   explored Java Sea shipwrecks, and seen the corals of the Great
                   Barrier Reef and Red Sea.
                 </p>
@@ -124,6 +130,7 @@ export default function BeyondWork() {
             </div>
           </Card>
 
+          {/* Dancer */}
           <Card className="bg-parchment" delay={0.16}>
             <IconBadge>
               <Music />
@@ -136,6 +143,7 @@ export default function BeyondWork() {
             </p>
           </Card>
 
+          {/* Mother & mentor */}
           <Card className="bg-parchment" delay={0.24}>
             <IconBadge>
               <Heart />

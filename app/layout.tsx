@@ -1,33 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kanikaguptashori.com"),
-  title: "Kanika Gupta Shori — Co-Founder & COO at Square Yards",
+  title: "Kanika Gupta Shori | Co-Founder & COO at Square Yards",
   description:
     "Kanika Gupta Shori, COO and Co-Founder of Square Yards, honored as Woman Entrepreneur of the Year. Her visionary leadership is reshaping real estate with innovation and empowerment.",
-  alternates: {
-    canonical: "https://www.kanikaguptashori.com",
-  },
+  alternates: { canonical: "https://www.kanikaguptashori.com" },
   openGraph: {
     type: "website",
     url: "https://www.kanikaguptashori.com",
     siteName: "Kanika Gupta Shori",
-    title: "Kanika Gupta Shori — Co-Founder & COO at Square Yards",
+    title: "Kanika Gupta Shori | Co-Founder & COO at Square Yards",
     description:
       "Co-Founder & COO of Square Yards. Reshaping real estate through technology, transparency, and women-led leadership.",
     images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
@@ -41,7 +25,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      style={
+        {
+          "--font-playfair": "'Playfair Display', Georgia, serif",
+          "--font-inter": "'Inter', system-ui, sans-serif",
+        } as React.CSSProperties
+      }
+    >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

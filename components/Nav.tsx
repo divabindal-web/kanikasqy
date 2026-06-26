@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/news", label: "News" },
   { href: "/awards", label: "Awards" },
@@ -29,6 +30,7 @@ export default function Nav() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  // Light text overlaid on the dark hero (home, not scrolled); dark text otherwise.
   const overHero = isHome && !scrolled && !open;
   const textColor = overHero ? "text-parchment" : "text-ink";
   const barClass = overHero

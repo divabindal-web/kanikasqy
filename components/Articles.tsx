@@ -15,7 +15,7 @@ export default function Articles() {
 
         <Reveal>
           <h2 className="mt-8 max-w-2xl font-serif text-3xl leading-snug text-ink sm:text-4xl">
-            In her own words &mdash; on leadership, family, travel and change.
+            In her own words, on leadership, family, travel and change.
           </h2>
         </Reveal>
 

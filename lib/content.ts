@@ -57,7 +57,7 @@ export const awards: Entry[] = [
   },
   {
     slug: "kanika-gupta-shori-awarded-with-entrepreneur-of-the-year-2019-by-great-indian-women-leadership",
-    title: "Entrepreneur of the Year 2019 — Great Indian Women Leadership",
+    title: "Entrepreneur of the Year 2019, Great Indian Women Leadership",
     excerpt:
       "Kanika was honoured with the “Woman Entrepreneur of the Year” award at the Great Indian Women Leader (GIWL) Awards 2019.",
     originalUrl: `${ORIGIN}/awards/kanika-gupta-shori-awarded-with-entrepreneur-of-the-year-2019-by-great-indian-women-leadership`,
@@ -83,14 +83,14 @@ export const news: Entry[] = [
     slug: "kanika-gupta-shori-on-women-leadership-and-technology-transforming-indian-real-estate",
     title: "Kanika Gupta Shori on Women Leadership and Technology Transforming Indian Real Estate",
     excerpt:
-      "Technology has been instrumental in transforming a fragmented real estate sector — addressing inefficiencies and enhancing transparency, with Square Yards leading the shift.",
+      "Technology has been instrumental in transforming a fragmented real estate sector, addressing inefficiencies and enhancing transparency, with Square Yards leading the shift.",
     originalUrl: `${ORIGIN}/news/kanika-gupta-shori-on-women-leadership-and-technology-transforming-indian-real-estate`,
   },
   {
     slug: "the-rise-of-real-estate-investments-among-bollywood-elites-in-2024",
     title: "The Rise of Real Estate Investments Among Bollywood Elites in 2024",
     excerpt:
-      "Bollywood’s evolving real estate choices reflect its financial acumen — blending luxury, strategy and global ambition into trends that redefine celebrity investment.",
+      "Bollywood’s evolving real estate choices reflect its financial acumen, blending luxury, strategy and global ambition into trends that redefine celebrity investment.",
     originalUrl: `${ORIGIN}/news/the-rise-of-real-estate-investments-among-bollywood-elites-in-2024`,
   },
   {
@@ -154,14 +154,14 @@ export const articles: Entry[] = [
   },
   {
     slug: "time-is-limited-how-do-you-want-to-spend-it-doing-your-karma-or-complaining",
-    title: "Time Is Limited — How Do You Want to Spend It? Doing Your “Karma” or Complaining",
+    title: "Time Is Limited: How Do You Want to Spend It? Doing Your “Karma” or Complaining",
     excerpt:
       "With roughly 35 years of active working life, the choice of how we spend each of those days becomes a question worth sitting with.",
     originalUrl: `${ORIGIN}/article/time-is-limited-how-do-you-want-to-spend-it-doing-your-karma-or-complaining`,
   },
   {
     slug: "global-citizenship-is-it-even-a-real-thing",
-    title: "Global Citizenship — Is It Even a Real Thing?",
+    title: "Global Citizenship: Is It Even a Real Thing?",
     excerpt:
       "A global citizen is well-read, well-travelled, respects cultural diversity and human rights, and feels responsible towards humanity.",
     originalUrl: `${ORIGIN}/article/global-citizenship-is-it-even-a-real-thing`,
@@ -170,26 +170,26 @@ export const articles: Entry[] = [
     slug: "my-journey-to-the-top-of-the-world",
     title: "My Journey to the Top of the World",
     excerpt:
-      "The best things often happen without planning — like a thrill-packed adventure through Finland for a self-confessed sucker for adventure.",
+      "The best things often happen without planning, like a thrill-packed adventure through Finland for a self-confessed sucker for adventure.",
     originalUrl: `${ORIGIN}/article/my-journey-to-the-top-of-the-world`,
   },
   {
     slug: "why-women-are-paid-less",
     title: "Why Are Women Paid Less?",
     excerpt:
-      "Marking Women’s Entrepreneurship Day, a reflection on how women are advancing as entrepreneurs and business owners — and the gaps that remain.",
+      "Marking Women’s Entrepreneurship Day, a reflection on how women are advancing as entrepreneurs and business owners, and the gaps that remain.",
     originalUrl: `${ORIGIN}/article/why-women-are-paid-less`,
   },
   {
     slug: "while-we-try-to-teach-our-children-all-about-life-our-children-teach-us-what-life-is-all-about",
     title: "While We Try to Teach Our Children About Life, They Teach Us What Life Is All About",
     excerpt:
-      "Children are the best teachers — a small moment over homework becomes a lesson in what really matters.",
+      "Children are the best teachers: a small moment over homework becomes a lesson in what really matters.",
     originalUrl: `${ORIGIN}/article/while-we-try-to-teach-our-children-all-about-life-our-children-teach-us-what-life-is-all-about`,
   },
   {
     slug: "change-is-the-only-constant-thing-in-the-world-so-why-fear-changing-houses",
-    title: "Change Is the Only Constant — So Why Fear Changing Houses?",
+    title: "Change Is the Only Constant, So Why Fear Changing Houses?",
     excerpt:
       "Most people resist the word “change,” yet a willingness to move can open doors we never expected.",
     originalUrl: `${ORIGIN}/article/change-is-the-only-constant-thing-in-the-world-so-why-fear-changing-houses`,
@@ -198,7 +198,7 @@ export const articles: Entry[] = [
     slug: "career-or-family-you-do-not-have-to-choose-you-have-to-sacrifice-2-5-years-of-your-life-at-most",
     title: "Career or Family? You Don’t Have to Choose",
     excerpt:
-      "On the eternal dilemma women face — and why it need not be a binary choice between career and family.",
+      "On the eternal dilemma women face, and why it need not be a binary choice between career and family.",
     originalUrl: `${ORIGIN}/article/career-or-family-you-do-not-have-to-choose-you-have-to-sacrifice-2-5-years-of-your-life-at-most`,
   },
 ];

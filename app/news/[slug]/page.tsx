@@ -13,8 +13,8 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const entry = getEntry("news", params.slug);
-  if (!entry) return { title: "News — Kanika Gupta Shori" };
-  return { title: `${entry.title} — Kanika Gupta Shori`, description: entry.excerpt };
+  if (!entry) return { title: "News | Kanika Gupta Shori" };
+  return { title: `${entry.title} | Kanika Gupta Shori`, description: entry.excerpt };
 }
 
 export default function NewsPage({ params }: { params: { slug: string } }) {

@@ -3,7 +3,7 @@ import CollectionList from "@/components/CollectionList";
 import { articles } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Articles — Kanika Gupta Shori",
+  title: "Articles | Kanika Gupta Shori",
   description: "Essays and reflections by Kanika Gupta Shori.",
 };
 

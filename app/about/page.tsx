@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import About from "@/components/About";
 
 export const metadata: Metadata = {
-  title: "About — Kanika Gupta Shori",
+  title: "About | Kanika Gupta Shori",
   description:
     "Co-Founder & COO of Square Yards. Wharton alumna, CFA Level 2 candidate, traveller, diver and mother of two.",
 };
