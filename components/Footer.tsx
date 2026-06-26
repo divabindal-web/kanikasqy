@@ -1,74 +1,88 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const nav = [
-  { href: "/#about", label: "About" },
-  { href: "/news", label: "News" },
-  { href: "/awards", label: "Awards" },
-  { href: "/article", label: "Articles" },
-];
+export default function Hero() {
+  const line = (text: string, delay: number, italic = false) => (
+    <span className="block overflow-hidden">
+      <motion.span
+        className={`block ${italic ? "italic text-champagne" : ""}`}
+        initial={{ y: "110%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay }}
+      >
+        {text}
+      </motion.span>
+    </span>
+  );
 
-const network = [
-  { href: "https://www.squareyards.com", label: "Square Yards" },
-  { href: "https://book.squareyards.com/", label: "Book Property Online" },
-  { href: "https://en.wikipedia.org/wiki/Square_Yards", label: "Square Yards Wiki" },
-];
-
-export default function Footer() {
   return (
-    <footer className="border-t border-champagne/50 bg-cream/50">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
-            <p className="font-serif text-2xl text-ink">Kanika Gupta Shori</p>
-            <p className="mt-3 max-w-xs font-sans text-sm leading-relaxed text-ink-soft">
-              Co-Founder &amp; Chief Operating Officer, Square Yards.
-            </p>
-          </div>
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+      <Image
+        src="/images/hero-portrait.jpg"
+        alt="Kanika Gupta Shori"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[68%_center]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/40" />
 
-          <div>
-            <p className="font-sans text-xs uppercase tracking-label text-gold">
-              Explore
-            </p>
-            <ul className="mt-4 space-y-2">
-              {nav.map((n) => (
-                <li key={n.href}>
-                  <Link
-                    href={n.href}
-                    className="link-underline font-sans text-sm text-ink-soft hover:text-ink"
-                  >
-                    {n.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="relative mx-auto w-full max-w-6xl px-6 pt-28">
+        <div className="max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mb-6 font-sans text-xs uppercase tracking-[0.22em] text-champagne"
+          >
+            Co-Founder &amp; Chief Operating Officer · Square Yards
+          </motion.p>
 
-          <div>
-            <p className="font-sans text-xs uppercase tracking-label text-gold">
-              Network
-            </p>
-            <ul className="mt-4 space-y-2">
-              {network.map((n) => (
-                <li key={n.href}>
-                  <a
-                    href={n.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-underline font-sans text-sm text-ink-soft hover:text-ink"
-                  >
-                    {n.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h1 className="font-serif text-[3.5rem] leading-[1.02] text-parchment sm:text-7xl lg:text-[5.5rem]">
+            {line("Kanika", 0.15)}
+            {line("Gupta", 0.27)}
+            {line("Shori", 0.39, true)}
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.85 }}
+            className="mt-8 max-w-md font-sans text-lg leading-relaxed text-parchment/90"
+          >
+            Reshaping real estate through technology, transparency, and
+            women-led leadership.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1 }}
+            className="mt-10 flex flex-wrap items-center gap-4"
+          >
+            <Link
+              href="/#connect"
+              className="rounded-full bg-parchment px-8 py-3.5 font-sans text-sm tracking-wide text-ink transition-all duration-300 hover:bg-gold hover:text-parchment"
+            >
+              Connect
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-full border border-parchment/60 px-8 py-3.5 font-sans text-sm tracking-wide text-parchment transition-all duration-300 hover:bg-parchment hover:text-ink"
+            >
+              Read her story
+            </Link>
+          </motion.div>
         </div>
-
-        <div className="mt-14 hairline" />
-        <p className="mt-6 font-sans text-xs text-ink-soft">
-          © {new Date().getFullYear()} Square Yards Consulting Private Limited.
-        </p>
       </div>
-    </footer>
+
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 md:block">
+        <div className="h-10 w-px bg-gradient-to-b from-champagne to-transparent" />
+      </div>
+    </section>
   );
 }
