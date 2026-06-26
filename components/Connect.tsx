@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
+// Change this to the preferred inbox.
 const CONTACT_EMAIL = "info@kanikaguptashori.com";
 
 const channels = [
@@ -33,7 +34,7 @@ export default function Connect() {
               </p>
             </Reveal>
             <Reveal delay={0.16}>
-              
+              <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="mt-10 inline-flex items-center gap-3 rounded-full bg-ink px-9 py-4 font-sans text-sm tracking-wide text-parchment transition-all duration-300 hover:bg-gold"
               >
@@ -43,11 +44,12 @@ export default function Connect() {
             </Reveal>
           </div>
 
+          {/* Contact index */}
           <Reveal delay={0.1}>
             <ul className="border-t border-champagne/50">
               {channels.map((c) => (
                 <li key={c.label}>
-                  
+                  <a
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
