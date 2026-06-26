@@ -8,13 +8,12 @@ export default function PressMarquee() {
   return (
     <section className="py-10">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-10 text-center font-sans text-xs uppercase tracking-label text-ink-soft">
+        <p className="mb-6 text-center font-sans text-xs uppercase tracking-label text-ink-soft">
           As featured in
         </p>
       </div>
 
       <div className="group relative overflow-hidden">
-        {/* edge fades */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-parchment to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-parchment to-transparent" />
 
