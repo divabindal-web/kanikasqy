@@ -1,7 +1,6 @@
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
-// Change this to the preferred inbox.
 const CONTACT_EMAIL = "info@kanikaguptashori.com";
 
 const channels = [
@@ -44,7 +43,6 @@ export default function Connect() {
             </Reveal>
           </div>
 
-          {/* Contact index */}
           <Reveal delay={0.1}>
             <ul className="border-t border-champagne/50">
               {channels.map((c) => (
