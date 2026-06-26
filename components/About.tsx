@@ -1,71 +1,61 @@
-import Image from "next/image";
+import Link from "next/link";
+import { awards } from "@/lib/content";
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
-export default function About() {
+export default function Awards() {
+  const featured = awards.slice(0, 3);
+
   return (
-    <section id="about" className="scroll-mt-24 py-24 md:py-32">
+    <section id="awards" className="scroll-mt-24 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="01">About</SectionLabel>
+          <SectionLabel index="01">Recognition</SectionLabel>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
-          <Reveal>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-xs md:sticky md:top-28">
-              <div className="absolute -inset-3 -z-10 rounded-[2px] border border-champagne/60" />
-              <Image
-                src="/images/about-portrait.jpg"
-                alt="Kanika Gupta Shori"
-                fill
-                sizes="(max-width: 768px) 70vw, 320px"
-                className="rounded-[2px] object-cover"
-              />
-            </div>
-          </Reveal>
+        <Reveal>
+          <h2 className="mt-8 font-serif text-3xl text-ink sm:text-4xl">
+            Awards &amp; honours
+          </h2>
+        </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="max-w-editorial">
-              <h2 className="font-serif text-3xl leading-snug text-ink sm:text-4xl">
-                A Wharton alumna building India&rsquo;s largest real estate
-                marketplace.
-              </h2>
-              <div className="mt-8 space-y-5 font-sans text-base leading-relaxed text-ink-soft">
-                <p>
-                  Kanika Gupta Shori is the Co-Founder &amp; COO of Square Yards,
-                  India&rsquo;s largest real estate marketplace &mdash; an
-                  Online-to-Offline (O2O) transaction platform that simplifies
-                  home buying with end-to-end solutions for homebuyers. Square
-                  Yards has become India&rsquo;s largest distributor of
-                  &ldquo;new homes,&rdquo; with 2,700+ employees across 10
-                  countries and 40 cities, facilitating roughly USD $1 billion in
-                  gross transactions annually and around USD $30 million in
-                  annualized revenue &mdash; one of the few Indian startups
-                  operating at EBITDA break-even.
+        <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-[2px] border border-champagne/50 bg-champagne/40 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((a, i) => (
+            <Reveal key={a.slug} delay={(i % 3) * 0.06} className="bg-parchment">
+              <Link
+                href={`/awards/${a.slug}`}
+                className="group flex h-full flex-col p-7 transition-colors duration-300 hover:bg-cream/70"
+              >
+                <span className="font-serif text-sm text-champagne">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-4 font-serif text-xl leading-snug text-ink">
+                  {a.title}
+                </h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-ink-soft">
+                  {a.excerpt}
                 </p>
-                <p>
-                  She is a Wharton Business School alumna, a CFA Level 2
-                  candidate, and holds a Bachelor&rsquo;s in Economics from Delhi
-                  University. With over 11 years of experience, she worked across
-                  asset management and entertainment before founding Square
-                  Yards. A mother of two, she began as an angel investor in
-                  startups while raising her children.
-                </p>
-                <p>
-                  Kanika is associated with social causes around women
-                  empowerment and child welfare, and has won accolades including
-                  &ldquo;Young Achiever&rdquo; and &ldquo;Woman Icon.&rdquo; A
-                  trained dancer in Salsa, Tango, Zumba and Kathak, she is also an
-                  avid traveller across six continents and 40+ countries, an
-                  adventure-sports enthusiast and a PADI-certified scuba diver
-                  &mdash; having cage-dived with sharks in the Pacific, explored
-                  shipwrecks in the Java Sea, dived caves of the Indian Ocean, and
-                  seen the corals of the Great Barrier Reef and Red Sea.
-                </p>
-              </div>
-            </div>
-          </Reveal>
+                <span className="mt-6 inline-flex items-center gap-2 font-sans text-xs uppercase tracking-label text-gold">
+                  Read
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    &rarr;
+                  </span>
+                </span>
+              </Link>
+            </Reveal>
+          ))}
         </div>
+
+        <Reveal>
+          <div className="mt-10">
+            <Link
+              href="/awards"
+              className="link-underline font-sans text-sm text-ink"
+            >
+              All awards &rarr;
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
