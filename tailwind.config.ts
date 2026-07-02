@@ -8,13 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        parchment: "#FBF7F0",
-        cream: "#F3ECE0",
-        ink: "#2B2622",
-        "ink-soft": "#5A5048",
-        gold: "#B08D57",
-        champagne: "#D9C2A0",
-        blush: "#E7D3CC",
+        parchment: "#F7F3EE",
+        cream: "#EFE8E1",
+        ink: "#282320",
+        "ink-soft": "#6A625B",
+        gold: "#A96E72",
+        champagne: "#DDCFCA",
+        blush: "#EAD9D3",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
