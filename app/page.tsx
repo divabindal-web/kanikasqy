@@ -17,8 +17,8 @@ export default function Home() {
         <Stats />
         <PressMarquee />
         <Awards />
-        <News />
         <BeyondWork />
+        <News />
         <Connect />
       </main>
       <Footer />
