@@ -60,7 +60,8 @@ export default function Nav() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
-  const overHero = isHome && !scrolled && !open;
+  void isHome; void scrolled;
+  const overHero = false;
   const textColor = overHero ? "text-parchment" : "text-ink";
   const dividerColor = overHero ? "border-parchment/30" : "border-champagne/70";
   const barClass = overHero
