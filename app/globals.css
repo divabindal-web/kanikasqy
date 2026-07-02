@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background-color: #eceee4;
-  color: #23261e;
+  background-color: #f6f2e9;
+  color: #23201b;
 }
 
 /* Subtle paper grain laid over the parchment background */
@@ -30,8 +30,8 @@ body::before {
 
 @layer base {
   ::selection {
-    background: #cbd2be;
-    color: #23261e;
+    background: #c7b083;
+    color: #23201b;
   }
 }
 
@@ -53,7 +53,7 @@ body::before {
     bottom: -2px;
     height: 1px;
     width: 100%;
-    background: #75855b;
+    background: #29496f;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -77,7 +77,7 @@ body::before {
 
 /* Focus visibility for keyboard users */
 :focus-visible {
-  outline: 2px solid #75855b;
+  outline: 2px solid #29496f;
   outline-offset: 3px;
 }
 
