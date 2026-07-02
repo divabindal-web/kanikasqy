@@ -62,7 +62,7 @@ export default function BeyondWork() {
     <section className="bg-cream/40 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="03">Beyond Work</SectionLabel>
+          <SectionLabel index="02">Beyond Work</SectionLabel>
         </Reveal>
 
         <div className="mt-8 max-w-3xl">
