@@ -8,7 +8,7 @@ export default function Hero() {
   const line = (text: string, delay: number, italic = false) => (
     <span className="block overflow-hidden">
       <motion.span
-        className={`block ${italic ? "italic text-gold" : ""}`}
+        className={`block ${italic ? "italic text-champagne" : ""}`}
         initial={{ y: "110%" }}
         animate={{ y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay }}
@@ -66,7 +66,7 @@ export default function Hero() {
           >
             <Link
               href="/#connect"
-              className="rounded-full bg-parchment px-8 py-3.5 font-sans text-sm tracking-wide text-ink transition-all duration-300 hover:bg-gold hover:text-parchment"
+              className="rounded-full bg-parchment px-8 py-3.5 font-sans text-sm tracking-wide text-ink transition-all duration-300 hover:bg-champagne"
             >
               Connect
             </Link>
