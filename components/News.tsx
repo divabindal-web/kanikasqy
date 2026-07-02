@@ -10,7 +10,7 @@ export default function News() {
     <section id="news" className="scroll-mt-24 bg-cream/40 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <SectionLabel index="02">In the News</SectionLabel>
+          <SectionLabel index="03">In the News</SectionLabel>
         </Reveal>
 
         <Reveal>
